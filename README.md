@@ -16,6 +16,15 @@ Contacte · FAQs · Blog · Blogpost
 
 ## Imatges
 
-`images/` conté les **26 imatges reals** del projecte de disseny (fotos i
-il·lustracions a resolució completa). Si en algun moment vols actualitzar-ne
-alguna, substitueix el fitxer mantenint el mateix nom.
+`images/` conté les **26 imatges reals** del projecte de disseny, en format
+**WebP** (2,2 MB en total). Originalment eren PNG i ocupaven 46,6 MB, cosa que
+feia que la web trigués massa a carregar.
+
+- Fotografies: WebP amb qualitat 82 i el costat llarg limitat a 1600 px.
+- Els dos logotips: WebP sense pèrdua, per conservar la transparència.
+
+Els PNG originals no s'han perdut: es poden recuperar de l'historial de git
+amb `git checkout e5ed771 -- images/`.
+
+Si vols canviar una imatge, substitueix el fitxer mantenint el mateix nom
+(i la mateixa extensió `.webp`).

@@ -1297,6 +1297,11 @@ Object.assign(window.NUBA_I18N, {
 "Cancel·lar":"Cancelar",
 "Llegir més":"Leer más",
 "Aquesta entrada ja no està disponible.":"Esta entrada ya no está disponible.",
+/* textos que el JavaScript escriu després de carregar */
+"Gràcies! He rebut el teu missatge i et respondré aviat.":"¡Gracias! He recibido tu mensaje y te responderé pronto.",
+"Enviat ✓":"Enviado ✓",
+"Veure tota la formació +":"Ver toda la formación +",
+"Veure menys formació −":"Ver menos formación −",
 "ansietat, adolescència, relacions":"ansiedad, adolescencia, relaciones",
 /* etiquetes */
 "límits":"límites",
@@ -1519,7 +1524,9 @@ Object.assign(window.NUBA_I18N, {
     function norm(s){ return s.replace(/\s+/g,' ').trim(); }
     var textNodes = null;
     function collect(){
-      if(textNodes) return textNodes;
+      // Sempre es torna a recórrer el document: així el contingut que el JavaScript
+      // crea després de carregar (blog, missatges del formulari, botons que canvien
+      // de text…) també es tradueix, en comptes de quedar-se en una llista fixa.
       textNodes = [];
       var walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
         acceptNode:function(n){
@@ -1592,9 +1599,22 @@ Object.assign(window.NUBA_I18N, {
       done.style.cssText = 'margin:16px 0 0;font-size:15px;font-weight:600;color:var(--accent)';
       form.appendChild(done);
     }
+    // S'escriu sempre en català i tot seguit es demana la traducció, perquè el
+    // motor guardi el català com a original i el canvi d'idioma segueixi funcionant.
     done.textContent = 'Gràcies! He rebut el teu missatge i et respondré aviat.';
     form.querySelectorAll('input,textarea,select').forEach(function(el){ el.value=''; });
-    if(btn){ btn.disabled = true; btn.textContent = 'Enviat ✓'; setTimeout(function(){ btn.disabled=false; btn.textContent = btn.getAttribute('data-label')||btn.textContent; }, 2500); }
+    if(btn){
+      btn.disabled = true;
+      btn.textContent = 'Enviat ✓';
+      if(window.__nubaReapplyLang) window.__nubaReapplyLang();
+      setTimeout(function(){
+        btn.disabled = false;
+        // __caLb guarda l'etiqueta original en català (data-label ja pot estar traduït)
+        btn.textContent = btn.__caLb || btn.getAttribute('data-label') || btn.textContent;
+        if(window.__nubaReapplyLang) window.__nubaReapplyLang();
+      }, 2500);
+    }
+    if(window.__nubaReapplyLang) window.__nubaReapplyLang();
     return false;
   };
   (function(){
@@ -1606,6 +1626,7 @@ Object.assign(window.NUBA_I18N, {
       extra.style.display = open ? 'none' : 'block';
       btn.textContent = open ? 'Veure tota la formació +' : 'Veure menys formació −';
       btn.setAttribute('aria-expanded', String(!open));
+      if(window.__nubaReapplyLang) window.__nubaReapplyLang();
     });
   })();
   (function(){
@@ -1674,11 +1695,10 @@ Object.assign(window.NUBA_I18N, {
     renderBlog();
     return false;
   };
-  window.nubaFakeSubmit = function(form){
-    var btn = form.querySelector('[type=submit]');
-    if(btn){ var t=btn.textContent; btn.textContent='Enviat ✓'; btn.disabled=true; setTimeout(function(){ btn.textContent=t; btn.disabled=false; form.reset(); },2200); }
-    return false;
-  };
+  // (Aquí hi havia una segona definició de window.nubaFakeSubmit que anul·lava
+  // la de més amunt: no validava el formulari, no mostrava el missatge de
+  // confirmació i deixava el botó en català encara que la pàgina estigués en
+  // castellà. S'ha eliminat perquè valgui la versió bona.)
 
   // Serveis carousels: build page-indicator dots
   function initCarousels(){

@@ -168,6 +168,10 @@
     .hero-inner{display:flex !important;flex-direction:column}
     .hero-imgwrap{position:relative !important;width:100% !important;height:400px !important;top:auto !important;right:auto !important;bottom:auto !important;order:-1}
     .hero-imgwrap img{object-position:85% 40% !important}
+    .proc-step{display:grid !important;grid-template-columns:36px 1fr;column-gap:16px;align-items:start}
+    .proc-step > span{grid-column:1;grid-row:1 / span 2;margin-bottom:0 !important}
+    .proc-step > h4{grid-column:2;grid-row:1;margin:6px 0 6px !important}
+    .proc-step > p{grid-column:2;grid-row:2}
     @media (min-width:600px){.hero-imgwrap{height:480px !important}.hero-imgwrap img{object-position:100% 40% !important}}
     .hero-imgwrap::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,#fff 0%,rgba(255,255,255,0) 6%)}
     .hero-txt{min-height:0 !important;max-width:100% !important;padding:28px 0 40px !important}
@@ -452,18 +456,18 @@
   <section style="background:var(--band)">
     <div class="container" style="padding:64px 0 56px">
       <h2 class="serif" style="font-weight:500;font-size:clamp(26px,3vw,34px);margin:0 0 40px;color:#1D3348;text-align:center">El teu procés</h2>
-      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;max-width:920px;margin:0 auto">
-        <div>
+      <div class="grid-3 proc-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;max-width:920px;margin:0 auto">
+        <div class="proc-step">
           <span class="serif" style="display:inline-flex;width:36px;height:36px;border-radius:50%;border:1.5px solid #FF8F7F;color:#FF8F7F;align-items:center;justify-content:center;font-weight:600;font-size:16px;margin-bottom:14px">1</span>
           <h4 style="font-family:'Manrope';font-weight:700;font-size:16px;color:#1D3348;margin:0 0 8px">Ens coneixem</h4>
           <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">Expliques què necessites i què t'agradaria aportar.</p>
         </div>
-        <div>
+        <div class="proc-step">
           <span class="serif" style="display:inline-flex;width:36px;height:36px;border-radius:50%;border:1.5px solid #FF8F7F;color:#FF8F7F;align-items:center;justify-content:center;font-weight:600;font-size:16px;margin-bottom:14px">2</span>
           <h4 style="font-family:'Manrope';font-weight:700;font-size:16px;color:#1D3348;margin:0 0 8px">Definim el procés</h4>
           <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">Fem una primera exploració de la teva situació i objectius, i dissenyem un camí adaptat a tu i al teu moment.</p>
         </div>
-        <div>
+        <div class="proc-step">
           <span class="serif" style="display:inline-flex;width:36px;height:36px;border-radius:50%;border:1.5px solid #FF8F7F;color:#FF8F7F;align-items:center;justify-content:center;font-weight:600;font-size:16px;margin-bottom:14px">3</span>
           <h4 style="font-family:'Manrope';font-weight:700;font-size:16px;color:#1D3348;margin:0 0 8px">Treballem i fem seguiment</h4>
           <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">Acompanyament constant amb eines i recursos; revisem els avenços i celebrem cada pas endavant.</p>

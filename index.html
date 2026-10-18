@@ -26,6 +26,8 @@
   button{font-family:inherit}
   h1,h2,h3,h4{margin:0}
   .container{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,32px)}
+  /* Els padding inline de les seccions (p. ex. "64px 0 56px") anul·laven el marge lateral: aquí es manté només el lateral, el vertical segueix sent l'inline */
+  .container{padding-left:clamp(20px,4vw,32px) !important;padding-right:clamp(20px,4vw,32px) !important}
   .serif{font-family:'Cormorant Garamond',serif}
   /* nav */
   .nav-link{transition:color .2s;position:relative;cursor:pointer}

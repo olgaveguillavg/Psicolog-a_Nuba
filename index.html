@@ -295,6 +295,10 @@
 
   /* BLOG OCULT: per publicar-lo, esborra aquesta regla i posa BLOG_ENABLED = true al JavaScript */
   [data-blog-link]{display:none !important}
+
+  /* "Per què escollir-me": 4 columnes a escriptori, 2 a tauleta, 1 a mòbil */
+  @media (max-width:1099px){.why-grid{grid-template-columns:repeat(2,1fr) !important}}
+  @media (max-width:599px){.why-grid{grid-template-columns:1fr !important}}
 </style>
 <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
   <svg viewBox="0 0 1360 660" xmlns="http://www.w3.org/2000/svg">
@@ -439,17 +443,17 @@
   <section style="background:#fff">
     <div class="container" style="padding:0 0 72px;border-top:1px solid #E7ECEF">
       <div class="grid-3 keys-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Acompanyament online</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Des de qualsevol lloc, en un entorn segur.</p></div>
+        <div class="feature">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
+          <div><h3>Acompanyament online</h3><p>Des de qualsevol lloc, en un entorn segur.</p></div>
         </div>
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Contacte inicial</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Una primera trucada per conèixer-nos.</p></div>
+        <div class="feature">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <div><h3>Contacte inicial</h3><p>Una primera trucada per conèixer-nos.</p></div>
         </div>
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="#FF8F7F"/></svg></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Centrat en els teus objectius</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Els marques tu; jo t'acompanyo.</p></div>
+        <div class="feature">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF8F7F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="#FF8F7F"/></svg></span>
+          <div><h3>Centrat en els teus objectius</h3><p>Els marques tu; jo t'acompanyo.</p></div>
         </div>
       </div>
     </div>
@@ -488,22 +492,22 @@
         <p class="eyebrow" style="margin:0">Per què escollir-me</p>
         <a class="nav-link" data-route="sobre-mi" style="font-size:14px;font-weight:600;color:var(--accent);cursor:pointer">Tota la trajectòria a Sobre mi →</a>
       </div>
-      <div class="grid-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><img src="images/icons/calendari.png" alt="" width="16" height="16" style="display:block;width:16px;height:16px"></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">4 anys d'experiència</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Teràpia sistèmica i especialitzada.</p></div>
+      <div class="grid-3 why-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px 28px">
+        <div class="feature">
+          <span class="ic"><img src="images/icons/calendari.png" alt="" width="22" height="22" style="display:block;width:22px;height:22px"></span>
+          <div><h3>4 anys d'experiència</h3><p>Teràpia sistèmica i especialitzada.</p></div>
         </div>
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><img src="images/icons/balances.png" alt="" width="16" height="16" style="display:block;width:16px;height:16px"></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Psicologia forense</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Equip d'Assessorament Tècnic Penal.</p></div>
+        <div class="feature">
+          <span class="ic"><img src="images/icons/balances.png" alt="" width="22" height="22" style="display:block;width:22px;height:22px"></span>
+          <div><h3>Psicologia forense</h3><p>Equip d'Assessorament Tècnic Penal.</p></div>
         </div>
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><img src="images/icons/birret.png" alt="" width="16" height="16" style="display:block;width:16px;height:16px"></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Universitat de Barcelona</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Equip terapèutic, teràpia sexual i de parella.</p></div>
+        <div class="feature">
+          <span class="ic"><img src="images/icons/birret.png" alt="" width="22" height="22" style="display:block;width:22px;height:22px"></span>
+          <div><h3>Universitat de Barcelona</h3><p>Equip terapèutic, teràpia sexual i de parella.</p></div>
         </div>
-        <div style="display:flex;gap:12px;align-items:flex-start">
-          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:var(--accent-bg);display:flex;align-items:center;justify-content:center"><img src="images/icons/llibre.png" alt="" width="16" height="16" style="display:block;width:16px;height:16px"></span>
-          <div><h3 style="font-family:'Manrope';font-size:14px;font-weight:700;color:#1D3348;margin:0 0 3px">Formació contínua</h3><p style="font-size:14px;line-height:1.5;color:#6F7A84;margin:0">Neuropsicologia i psicologia perinatal.</p></div>
+        <div class="feature">
+          <span class="ic"><img src="images/icons/llibre.png" alt="" width="22" height="22" style="display:block;width:22px;height:22px"></span>
+          <div><h3>Formació contínua</h3><p>Neuropsicologia i psicologia perinatal.</p></div>
         </div>
       </div>
     </div>
@@ -646,29 +650,17 @@
   </section>
 
   <!-- 5. Com serà començar -->
-  <section style="background:var(--band)">
-    <div class="container" style="padding:72px 0">
+  <section style="background:#fff">
+    <div class="container proc-sec" style="padding:72px 0 24px;border-top:1px solid #E7ECEF">
       <div style="max-width:640px;margin:0 auto 36px;text-align:center">
         <p class="eyebrow">Primers passos</p>
         <h2 class="serif" style="font-weight:500;font-size:clamp(26px,3vw,34px);color:#1D3348">Com serà començar?</h2>
       </div>
-      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:920px;margin:0 auto">
-        <div style="text-align:center">
-          <span class="serif" style="display:inline-flex;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);align-items:center;justify-content:center;font-weight:600;font-size:18px;margin-bottom:14px">1</span>
-          <h3 style="font-family:'Manrope';font-weight:700;font-size:15px;color:#1D3348;margin:0 0 8px">Trucada inicial gratuïta</h3>
-          <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">Una entrevista telefònica per conèixer la demanda i valorar, per ambdues parts, si soc la professional adequada.</p>
-        </div>
-        <div style="text-align:center">
-          <span class="serif" style="display:inline-flex;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);align-items:center;justify-content:center;font-weight:600;font-size:18px;margin-bottom:14px">2</span>
-          <h3 style="font-family:'Manrope';font-weight:700;font-size:15px;color:#1D3348;margin:0 0 8px">Metodologia i primera sessió</h3>
-          <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">T'explico breument la meva metodologia i acordem una data per començar, amb claredat i tranquil·litat.</p>
-        </div>
-        <div style="text-align:center">
-          <span class="serif" style="display:inline-flex;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);align-items:center;justify-content:center;font-weight:600;font-size:18px;margin-bottom:14px">3</span>
-          <h3 style="font-family:'Manrope';font-weight:700;font-size:15px;color:#1D3348;margin:0 0 8px">Acompanyament online</h3>
-          <p style="font-size:14px;line-height:1.6;color:#6F7A84;margin:0">Sessions des de qualsevol lloc, estalviant desplaçaments, en un entorn segur i confidencial.</p>
-        </div>
-      </div>
+      <ol class="proc">
+        <li class="proc-card"><span class="proc-num" aria-hidden="true">01</span><div><h3 class="proc-title">Trucada inicial gratuïta</h3><p class="proc-text">Una entrevista telefònica per conèixer la demanda i valorar, per ambdues parts, si soc la professional adequada.</p></div></li>
+        <li class="proc-card"><span class="proc-num" aria-hidden="true">02</span><div><h3 class="proc-title">Metodologia i primera sessió</h3><p class="proc-text">T'explico breument la meva metodologia i acordem una data per començar, amb claredat i tranquil·litat.</p></div></li>
+        <li class="proc-card"><span class="proc-num" aria-hidden="true">03</span><div><h3 class="proc-title">Acompanyament online</h3><p class="proc-text">Sessions des de qualsevol lloc, estalviant desplaçaments, en un entorn segur i confidencial.</p></div></li>
+      </ol>
     </div>
   </section>
 
